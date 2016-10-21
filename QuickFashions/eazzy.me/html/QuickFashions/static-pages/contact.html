@@ -1,0 +1,166 @@
+        <!-- ========== CONTENT START ========== -->
+
+        <section id="content">
+            <div class="container">
+
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li>Account Login</li>
+                </ol>
+
+                <h1>Contact Us</h1>
+
+                <div class="gap-20"></div>
+
+                <!-- ========== MAP START ========== -->
+
+                <!-- Google Map Script -->
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRMxiPsqJ9SUuaK1KsCAjd3gqnecjlBw&amp;sensor=false"></script>
+                <script type="text/javascript">
+
+                    function initialize() {
+
+                        // Create an array of styles.
+                        var styles = [
+                            {
+                                stylers: [
+                                    {hue: "#FD638F"},
+                                    {saturation: 0}
+                                ]
+                            }, {
+                                featureType: "road",
+                                elementType: "geometry",
+                                stylers: [
+                                    {lightness: 100},
+                                    {visibility: "simplified"}
+                                ]
+                            }, {
+                                featureType: "road",
+                                elementType: "labels",
+                                stylers: [
+                                    {visibility: "off"}
+                                ]
+                            }
+                        ];
+
+                        // Create a new StyledMapType object, passing it the array of styles,
+                        // as well as the name to be displayed on the map type control.
+                        var styledMap = new google.maps.StyledMapType(styles,
+                                {name: "Styled Map"});
+
+
+                        var mapOptions = {
+                            zoom: 4,
+                            center: new google.maps.LatLng(51.4597167, 14.6256667),
+                            mapTypeControlOptions: {
+                                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+                            }
+                        }
+                        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+                        //Associate the styled map with the MapTypeId and set it to display.
+                        map.mapTypes.set('map_style', styledMap);
+                        map.setMapTypeId('map_style');
+
+                        setMarkers(map, places);
+                    }
+
+                    var places = [
+                        ['Moscow', 55.7600667, 37.6194667, 1],
+                        ['Warsaw', 52.2393167, 21.0214167, 1],
+                        ['Berlin', 52.52665, 13.3858, 1],
+                        ['Paris', 48.8582333, 2.3518167, 1]
+                    ];
+
+                    function setMarkers(map, locations) {
+                        // Add markers to the map
+                        var image = {
+                            url: 'img/marker.png',
+                            // This marker is 40 pixels wide by 42 pixels tall.
+                            size: new google.maps.Size(32, 40),
+                            // The origin for this image is 0,0.
+                            origin: new google.maps.Point(0, 0),
+                            // The anchor for this image is the base of the pin at 20,42.
+                            anchor: new google.maps.Point(16, 35)
+                        };
+
+                        for (var i = 0; i < locations.length; i++) {
+                            var place = locations[i];
+                            var myLatLng = new google.maps.LatLng(place[1], place[2]);
+                            var marker = new google.maps.Marker({
+                                position: myLatLng,
+                                map: map,
+                                //icon: image,
+                                title: place[0],
+                                zIndex: place[3],
+                                animation: google.maps.Animation.DROP
+                            });
+
+                            var contentString = "Some content";
+                            google.maps.event.addListener(marker, "click", function () {
+                                infowindow.setContent(this.html);
+                                infowindow.open(map, this);
+                            });
+                        }
+                    }
+
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+
+            </div>
+            <div id="map-canvas"></div>
+            <div class="container">
+
+                <!-- ========== MAP END ========== -->
+
+                <div class="row">
+                    <div class="col-sm-5">
+
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="email" class="form-control input-lg" id="exampleInputEmail" placeholder="Enter">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control input-lg" id="exampleInputPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="exampleTextarea" id="exampleTextarea" class="form-control input-lg" cols="30" rows="5" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </form>
+                        <div class="gap-30"></div>
+
+                    </div>
+                    <div class="col-sm-3">
+
+                        <h3>Contact Info</h3>
+
+                        <p>
+                            Garbini Store,<br>
+                            5798 West Coast Road,<br>
+                            Opp to Pachakkarikkada,<br>
+                            Sydney, AU - 20057
+                        </p>
+                        <p>
+                            Phone: (123) 456-7890<br>
+                            Email: <a href="mailto:mail@mail.com">contact@garbini.com</a><br>
+                            Web: <a href="#">www.garbini.com</a>
+                        </p>
+
+                    </div>
+                    <div class="col-sm-4">
+
+                        <h3>We Are Hiring!</h3>
+
+                        <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+
+                        <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu.</p>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- ========== CONTENT END ========== -->

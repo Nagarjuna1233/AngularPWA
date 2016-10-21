@@ -1,0 +1,43 @@
+
+                <ul class="products row" ng-controller="productsController">
+
+                   <!--  <li class="col-sm-3 first">
+                        <div class="product">
+                            <div class="thumbnail">
+                                <a href="product.html"><img src="img/images/product-1.jpg" alt=""></a>
+                                <a href="#" class="add-to-cart" title="Add to Cart">
+                                    <span class="fa-stack fa-2x">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-shopping-cart  fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="title">
+                                <h3><a href="#">Reshape Panties</a></h3>
+                                <p>by Jack &amp; Jones</p>
+                            </div>
+                            <span class="price">$18</span>
+                        </div>
+                    </li> -->
+
+                    <li class="col-sm-3" ng-repeat="product in products">
+                        <div class="product">
+                            <div class="thumbnail">
+                                <a href="/#product?productID={{product.code}}"><img src="{{product.imgURL}}" alt=""></a>
+                                <a href="/#product?productID={{product.code}}" class="add-to-cart" title="Add to Cart">
+                                    <span class="fa-stack fa-2x">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-shopping-cart  fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="title">
+                                <h3><a href="#">{{product.name}}</a></h3>
+                                <p>{{product.summary}}</p>
+                            </div>
+                            <span class="price">{{product.price.value}}</span>
+                        </div>
+                    </li>
+                </ul>

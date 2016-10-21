@@ -1,0 +1,132 @@
+
+        <!-- ========== CONTENT START ========== -->
+
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li>Shopping Cart</li>
+                </ol>
+
+                <h1 class="page-title">Shopping Cart</h1>
+        <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+        <div ng-controller="cartController">
+        <table id="myTable" class="shop_table cart table-striped" >
+                    <thead>
+                        <tr>
+                            <th class="product-remove">Delete</th>
+                            <th class="product-desc">Product Description</th>
+                            <th class="product-size visible-md visible-lg">Size</th>
+                            <th class="product-color visible-md visible-lg">Color</th>
+                            <th class="product-qty">Quantity</th>
+                            <th class="product-price">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cart_item" ng-repeat="orderEntrie in orderEntries">
+                            <td class="product-remove"><button ng-click="removeRow(orderEntrie.product.code,orderEntrie.entryNumber)" class="remove"><i class="fa fa-times-circle fa-2x"></button></span></td>
+                            <td class="product-desc">
+                                <dl>
+                                    <dt class="hidden-xs"><img src="{{orderEntrie.imgURL}}" alt=""></dt>
+                                    <dd>
+                                        <h3>{{orderEntrie.product.name}}</h3>
+                                        <p class="hidden-xs">Nam nec tellus a odio tincidunt auctor a odio. Sed non  mais vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per.</p>
+                                    </dd>
+                                </dl>
+                            </td>
+                            <td class="product-size visible-md visible-lg">
+                                <h3>M</h3>
+                            </td>
+                            <td class="product-color visible-md visible-lg">
+                                <div class="color-square color-pink"></div>
+                            </td>
+                            <td class="product-qty">
+                                <div class="quantity buttons_added">
+                                    <button class="minus"><i class="fa fa-minus"></i></button>
+                                    <input type="number" size="4" class="qty text form-control" title="Qty" value="{{orderEntrie.quantity}}" name="qty" step="1">
+                                    <button class="plus"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </td>
+                            <td class="product-price">
+                                <h3>{{orderEntrie.totalPrice.value}}</h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="cart-collaterals">
+                    <table class="totals">
+                        <tbody>
+                            <tr class="cart-subtotal">
+                                <th>Cart Subtotal</th>
+                                <td><span class="amount">${{totalprice}}</span></td>
+                            </tr>
+                            <tr class="shipping">
+                                <th>Shipping and Handling</th>
+                                <td>Free Shipping</td>
+                            </tr>
+                            <tr class="order-total">
+                                <th>Order Total</th>
+                                <td><span class="amount">${{totalprice}}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+
+
+       
+        <!-- ========== FOOTER END ========== -->
+
+        <div id="cart-panel" class="panel-left">
+            <aside class="widget_shopping_cart">
+                <h3>Shopping Cart</h3>
+                <ul class="cart_list">
+                    <li>
+                        <a href="#">
+                            <img alt="" src="http://placehold.it/60x60">
+                            Reshape Panties
+                        </a>
+                        <span class="quantity">1 × <span class="amount">$12.00</span></span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img alt="" src="http://placehold.it/60x60">
+                            Reshape Panties
+                        </a>
+                        <span class="quantity">1 × <span class="amount">$12.00</span></span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img alt="" src="http://placehold.it/60x60">
+                            Reshape Panties
+                        </a>
+                        <span class="quantity">1 × <span class="amount">$12.00</span></span>
+                    </li>
+                </ul>
+                <p class="total"><strong>Subtotal:</strong> <span class="amount">$36.00</span></p>
+                <p class="buttons">
+                    <a class="btn btn-default btn-lg btn-block" href="shopping-cart.html">View Cart</a>
+                    <a class="btn btn-primary btn-lg btn-block" href="my-account.html">Checkout</a>
+                </p>
+            </aside>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="../../../ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.jpanelmenu.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <!--[if (gte IE 9)|!(IE)]><!-->
+        <script src="js/jquery.cookie.js"></script>
+        <script src="js/theme-config.js"></script>
+        <!--<![endif]-->
+
+    </body>
+
+<!-- Mirrored from eazzy.me/html/garbini/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Sep 2016 10:16:52 GMT -->
+</html>

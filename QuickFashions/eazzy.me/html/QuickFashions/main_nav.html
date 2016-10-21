@@ -1,0 +1,23 @@
+<div class="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-nav">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html"><img src="img/qf_logo1.png" alt="Garbini" class="img-responsive"></a>
+                        </div>
+                        <div class="navbar-collapse collapse main-nav">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown" ng-repeat="shopbydepartment in shopbydepartments">
+                                    <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">{{shopbydepartment.super_category_name}} <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li ng-repeat="subCategorie in shopbydepartment.subCategories"><a href="index.html" >{{subCategorie.sub_category_name}} </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+</div>
+

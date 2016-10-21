@@ -1,0 +1,21 @@
+{
+  "name": "QuickFashions Lite",
+  "short_name": "QuickFashions",
+  "description": "QuickFashions PWA",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#2874f0",
+  "theme_color": "#f5f5f5",
+  "icons": [{
+      "src": "./img/icons/qf_mobile_icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }],
+  "author": {
+    "name": "Nagarjuna",
+    "website": "http://techouts.com"
+  },
+  "gcm_sender_id": "847244712742",
+  "gcm_user_visible_only": true
+}
